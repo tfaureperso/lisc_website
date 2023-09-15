@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+author: "My name"
+date: "6/18/2020"
+output: html_document
+---
+
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(gt)
+
+make_hyperlink = function(myurl,mytext=myurl) {
+  paste('<a href="',myurl,'">',mytext,'</a>')
+}
+
+df <- data.frame(
+  stringsAsFactors = FALSE,
+  country = c("UK", "US"),
+  name = c("BBC", "CNN"),
+  link = c("https://www.bbc.com/news", "https://edition.cnn.com/")
+)
+
+df %>%
+  gt() %>%
+  fmt (
+    columns = 'link',
+    fns = make_hyperlink
+  )
+```

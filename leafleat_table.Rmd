@@ -1,0 +1,50 @@
+---
+title: "Flexdashboard with Crosstalk, Leaflet and DT"
+output:
+  flexdashboard::flex_dashboard:
+  orientation: rows
+vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(crosstalk)
+library(leaflet)
+library(dplyr)
+library(DT)
+```
+
+# Page 1
+
+##
+
+### Map and Filter
+
+```{r}
+# Wrap data frame in SharedData
+sd <- SharedData$new(quakes[sample(nrow(quakes), 100), ])
+
+# Create a filter input
+filter_slider("mag", "Magnitude", sd, column = ~mag, step = 0.1, width = 250)
+
+# Use SharedData like a dataframe with Crosstalk-enabled widgets
+
+leaflet(sd) %>%
+  addTiles() %>%
+  addMarkers()
+```
+
+### DataTable
+
+```{r}
+datatable(sd,
+          extensions = "Scroller", style = "bootstrap", class = "compact", width = "100%",
+          options = list(deferRender = TRUE, scrollY = 300, scroller = TRUE)
+)
+```
+
+# Page 2
+
+##
+
+###

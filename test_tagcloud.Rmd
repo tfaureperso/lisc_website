@@ -1,0 +1,54 @@
+---
+title: "Word Cloud Report"
+output:
+  html_document:
+    toc: true
+toc_depth: 2
+---
+
+  # Introduction
+
+  This report demonstrates how to create a word cloud using the `wordcloud2` package in R.
+
+## Data Preparation
+
+```{r data-preparation}
+# Load required libraries
+library(wordcloud2)
+library(tm)
+
+# Sample text data
+text <- c("This is a sample text for word cloud generation.",
+          "Word clouds are a popular way to visualize text data.",
+          "R is a powerful tool for text analysis and data visualization.",
+          "You can customize word clouds to make them more informative.")
+
+# Create a corpus
+corpus <- Corpus(VectorSource(text))
+
+# Text preprocessing
+corpus <- tm_map(corpus, content_transformer(tolower))
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, removeNumbers)
+corpus <- tm_map(corpus, removeWords, stopwords("english"))
+```
+```{r data-view}
+
+# Create a document-term matrix
+dtm <- DocumentTermMatrix(corpus)
+
+# Convert the DTM into a matrix of word frequencies
+word_freq <- as.matrix(dtm)
+
+# Get the words and their frequencies
+words <- colnames(word_freq)
+freqs <- colSums(word_freq)
+
+# Create a data frame
+wordcloud_data <- data.frame(word = words, freq = freqs)
+
+# Create the word cloud
+wordcloud2(demoFreq,size=1.5)
+```
+
+

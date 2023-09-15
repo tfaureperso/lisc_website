@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clickable Tag Cloud</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Style de base pour les liens dans le nuage de tags */
+        #tagCloud a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            /* Couleur du texte (foreground) */
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="tagCloud"></div>
+
+    <!-- Inclure la bibliothèque D3.js -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+
+    <script>
+        // Données de tags (exemples)
+        var data = [
+            { "tag": "Tag1", "count": 10 },
+            { "tag": "Tag2", "count": 15 },
+            { "tag": "Tag3", "count": 8 }
+            // Ajoutez d'autres données de tags ici
+        ];
+
+        // Créer l'échelle pour la taille des tags en fonction de la fréquence
+        var sizeScale = d3.scaleLinear()
+            .domain([0, d3.max(data, function(d) { return d.count; })])
+            .range([10, 60]); // Ajustez la taille minimale et maximale ici
+
+        // Créer une échelle de couleurs en fonction des valeurs des tags
+        var colorScale = d3.scaleSequential(d3.interpolateViridis)
+            .domain([0, d3.max(data, function(d) { return d.count; })]);
+
+        // Créer le nuage de tags
+        d3.select("#tagCloud")
+            .selectAll("a")
+            .data(data)
+            .enter()
+            .append("a")
+            .attr("href", function(d) { return "#" + d.tag; }) // Lien vers le tag
+            .style("font-size", function(d) { return sizeScale(d.count) + "px"; })
+            .style("color", function(d) { return colorScale(d.count); }) // Couleur du texte proportionnelle à la valeur
+            .text(function(d) { return d.tag; });
+    </script>
+</body>
+</html>

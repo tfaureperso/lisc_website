@@ -1,0 +1,90 @@
+---
+about:
+  template: jolla
+  id: about-block
+  image: "img/lisc_team.jpeg"
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/Lisc_Inrae
+    - icon: github
+      text: Github
+      href: https://github.com/Lisc_Inrae
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/Lisc_Inrae/
+    - icon: envelope
+      text: Email
+      href: "mailto:ur.lisc@inrae.fr"  
+---
+
+::: {#about-block}
+:::
+
+# Welcome to the LISC!
+
+bla bla .... mkgdpogdgjdog
+
+
+This is a Shinylive application embedded in a Quarto doc.
+
+```{shinylive-python}
+#| standalone: true
+#| components: [editor, viewer]
+
+from shiny import *
+
+app_ui = ui.page_fluid(
+    ui.input_slider("n", "N", 0, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+app = App(app_ui, server)
+
+```
+
+```{r}
+library(leaflet)
+leaflet() %>%
+  #addTiles() %>%  # Add default OpenStreetMap map tiles
+  addProviderTiles('Esri.WorldImagery') %>%     setView(3.110742, 45.762643, zoom = 17) %>%
+  addMarkers(lat=45.762643, lng=3.110742, popup="The lisc Home")
+```
+
+
+```{r}
+library(sf)
+library(leaflet)
+library(leafpop)
+
+pnt = st_as_sf(data.frame(x = 3.110742, y = 45.762643),coords = c("x", "y"),crs = 4326)
+
+img = "http://bit.ly/1TVwRiR"
+
+leaflet() %>%
+  addProviderTiles('Esri.WorldImagery') %>%
+  setView(3.110742, 45.762643, zoom = 17) %>%
+  addCircleMarkers(data = pnt, group = "pnt",color = "#bf111a") %>%
+  addPopupImages(img, group = "pnt")
+```
+
+
+```{r}
+library(DT)
+datatable(mtcars)
+```
+
+
+
+```{r}
+library("wordcloud2")
+wordcloud2(demoFreq)
+datatable(demoFreq)
+```
+

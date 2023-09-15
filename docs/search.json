@@ -1,0 +1,198 @@
+[
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "publications/index.html#the-languages-of-middle-earth",
+    "href": "publications/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "publications/index.html#the-history-of-the-war-of-the-ring",
+    "href": "publications/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "test_ktable.html",
+    "href": "test_ktable.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "library(gt)\n\nmake_hyperlink = function(myurl,mytext=myurl) {\n  paste('&lt;a href=\"',myurl,'\"&gt;',mytext,'&lt;/a&gt;')\n}\n\ndf &lt;- data.frame(\n  stringsAsFactors = FALSE,\n  country = c(\"UK\", \"US\"),\n  name = c(\"BBC\", \"CNN\"),\n  link = c(\"https://www.bbc.com/news\", \"https://edition.cnn.com/\")\n)\n\ndf %&gt;%\n  gt() %&gt;%\n  fmt (\n    columns = 'link',\n    fns = make_hyperlink\n  )\n\n\n\n\n\n  \n    \n    \n      country\n      name\n      link\n    \n  \n  \n    UK\nBBC\n https://www.bbc.com/news \n    US\nCNN\n https://edition.cnn.com/"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "posts/index.html#the-languages-of-middle-earth",
+    "href": "posts/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "posts/index.html#the-history-of-the-war-of-the-ring",
+    "href": "posts/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "test_tagcloud.html",
+    "href": "test_tagcloud.html",
+    "title": "Word Cloud Report",
+    "section": "",
+    "text": "# Introduction\nThis report demonstrates how to create a word cloud using the wordcloud2 package in R."
+  },
+  {
+    "objectID": "test_tagcloud.html#data-preparation",
+    "href": "test_tagcloud.html#data-preparation",
+    "title": "Word Cloud Report",
+    "section": "Data Preparation",
+    "text": "Data Preparation\n\n# Load required libraries\nlibrary(wordcloud2)\nlibrary(tm)\n\nLe chargement a nécessité le package : NLP\n\n# Sample text data\ntext &lt;- c(\"This is a sample text for word cloud generation.\",\n          \"Word clouds are a popular way to visualize text data.\",\n          \"R is a powerful tool for text analysis and data visualization.\",\n          \"You can customize word clouds to make them more informative.\")\n\n# Create a corpus\ncorpus &lt;- Corpus(VectorSource(text))\n\n# Text preprocessing\ncorpus &lt;- tm_map(corpus, content_transformer(tolower))\n\nWarning in tm_map.SimpleCorpus(corpus, content_transformer(tolower)):\ntransformation drops documents\n\ncorpus &lt;- tm_map(corpus, removePunctuation)\n\nWarning in tm_map.SimpleCorpus(corpus, removePunctuation): transformation drops\ndocuments\n\ncorpus &lt;- tm_map(corpus, removeNumbers)\n\nWarning in tm_map.SimpleCorpus(corpus, removeNumbers): transformation drops\ndocuments\n\ncorpus &lt;- tm_map(corpus, removeWords, stopwords(\"english\"))\n\nWarning in tm_map.SimpleCorpus(corpus, removeWords, stopwords(\"english\")):\ntransformation drops documents\n\n\n\n# Create a document-term matrix\ndtm &lt;- DocumentTermMatrix(corpus)\n\n# Convert the DTM into a matrix of word frequencies\nword_freq &lt;- as.matrix(dtm)\n\n# Get the words and their frequencies\nwords &lt;- colnames(word_freq)\nfreqs &lt;- colSums(word_freq)\n\n# Create a data frame\nwordcloud_data &lt;- data.frame(word = words, freq = freqs)\n\n# Create the word cloud\nwordcloud2(demoFreq,size=1.5)"
+  },
+  {
+    "objectID": "about_lisc/index.html",
+    "href": "about_lisc/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "about_lisc/index.html#the-languages-of-middle-earth",
+    "href": "about_lisc/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "about_lisc/index.html#the-history-of-the-war-of-the-ring",
+    "href": "about_lisc/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV\n  \n\n\n  \n\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "news_events/index.html",
+    "href": "news_events/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "news_events/index.html#the-languages-of-middle-earth",
+    "href": "news_events/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "news_events/index.html#the-history-of-the-war-of-the-ring",
+    "href": "news_events/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "LISC",
+    "section": "",
+    "text": "title: “LISC Blog” listing: contents: posts # all Quarto docs in the posts directory will be included on your listing page type: grid # or default or table; each type has its own set of yaml options to include sort: “date desc” # can also sort on more than one field categories: true # allows you to sort posts by assigned categories"
+  },
+  {
+    "objectID": "world_explorer.html",
+    "href": "world_explorer.html",
+    "title": "World Explorer",
+    "section": "",
+    "text": "viewof year =  Inputs.range(\n  [1990, 2019],\n  {value: 2019, step: 1, label: \"Année\"}\n)\nviewof k =  Inputs.range(\n  [20, 100],\n  {value: 50, step: 1, label: \"Rayon max\"}\n)\nmeta = FileAttachment(\"data/worldbank_meta.csv\").csv()\nviewof indicator = Inputs.select(\n  new Map(meta.map((d) =&gt; [d.indicator, d.shortcode])),\n  { label: \"Indicateur\" }\n)\nprojections = [\"Patterson\", \"NaturalEarth1\", \"Bertin1953\", \"InterruptedSinusoidal\", \"Armadillo\", \"Baker\", \"Gingery\", \"Berghaus\", \"Loximuthal\", \"Healpix\", \"InterruptedMollweideHemispheres\", \"Miller\", \"Aitoff\", \"ConicEqualArea\", \"Eckert3\", \"Hill\"]\nviewof proj = Inputs.select(projections, {label: \"Projection\", width: 350})\nviewof color = Inputs.color({label: \"couleur\", value: \"#4682b4\"})\nviewof simpl =  Inputs.range( [0.01, 0.5], {value: 0.1, step: 0.01, label: \"Simplification\"} )\nviewof x =  Inputs.range( [-180, 180], {value: 0, step: 1, label: \"Rotation (x)\"} )\nviewof y =  Inputs.range( [-90, 90], {value: 0, step: 1, label: \"Rotation (y)\"} )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nworld = FileAttachment(\"data/world.json\").json()\nstats = FileAttachment(\"data/worldbank_data.csv\").csv()\ngeo = require(\"./lib/geotoolbox.js\")\nworld2 = geo.simplify(world, {k: simpl})\nbertin = require(\"./lib/bertin.js\")\nstatsyear = stats.filter(d =&gt; d.date == year)\ndata = bertin.merge(world2, \"id\", statsyear, \"iso3c\")\nvarmax = d3.max(stats.filter(d =&gt; d.date == 2019), d =&gt; +d[indicator])\ntitle = meta.map((d) =&gt; [d.indicator, d.shortcode]).find((d) =&gt; d[1] == indicator)[0] + \" in \" + year"
+  },
+  {
+    "objectID": "leafleat_table.html",
+    "href": "leafleat_table.html",
+    "title": "Flexdashboard with Crosstalk, Leaflet and DT",
+    "section": "",
+    "text": "# Wrap data frame in SharedData\nsd &lt;- SharedData$new(quakes[sample(nrow(quakes), 100), ])\n\n# Create a filter input\nfilter_slider(\"mag\", \"Magnitude\", sd, column = ~mag, step = 0.1, width = 250)\n\n\nMagnitude\n\n\n\n\n# Use SharedData like a dataframe with Crosstalk-enabled widgets\n\nleaflet(sd) %&gt;%\n  addTiles() %&gt;%\n  addMarkers()\n\nAssuming \"long\" and \"lat\" are longitude and latitude, respectively\n\n\n\n\n\n\n\n\n\n\ndatatable(sd,\n          extensions = \"Scroller\", style = \"bootstrap\", class = \"compact\", width = \"100%\",\n          options = list(deferRender = TRUE, scrollY = 300, scroller = TRUE)\n)"
+  },
+  {
+    "objectID": "leafleat_table.html#section",
+    "href": "leafleat_table.html#section",
+    "title": "Flexdashboard with Crosstalk, Leaflet and DT",
+    "section": "",
+    "text": "# Wrap data frame in SharedData\nsd &lt;- SharedData$new(quakes[sample(nrow(quakes), 100), ])\n\n# Create a filter input\nfilter_slider(\"mag\", \"Magnitude\", sd, column = ~mag, step = 0.1, width = 250)\n\n\nMagnitude\n\n\n\n\n# Use SharedData like a dataframe with Crosstalk-enabled widgets\n\nleaflet(sd) %&gt;%\n  addTiles() %&gt;%\n  addMarkers()\n\nAssuming \"long\" and \"lat\" are longitude and latitude, respectively\n\n\n\n\n\n\n\n\n\n\ndatatable(sd,\n          extensions = \"Scroller\", style = \"bootstrap\", class = \"compact\", width = \"100%\",\n          options = list(deferRender = TRUE, scrollY = 300, scroller = TRUE)\n)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the LISC!",
+    "section": "",
+    "text": "Twitter\n  \n  \n    \n     Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n\n\n\n\nWelcome to the LISC!\nbla bla …. mkgdpogdgjdog\nThis is a Shinylive application embedded in a Quarto doc.\n#| standalone: true\n#| components: [editor, viewer]\n\nfrom shiny import *\n\napp_ui = ui.page_fluid(\n    ui.input_slider(\"n\", \"N\", 0, 100, 40),\n    ui.output_text_verbatim(\"txt\"),\n)\n\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"The value of n*2 is {input.n() * 2}\"\n\napp = App(app_ui, server)\n\n\nlibrary(leaflet)\nleaflet() %&gt;%\n  #addTiles() %&gt;%  # Add default OpenStreetMap map tiles\n  addProviderTiles('Esri.WorldImagery') %&gt;%     setView(3.110742, 45.762643, zoom = 17) %&gt;%\n  addMarkers(lat=45.762643, lng=3.110742, popup=\"The lisc Home\")\n\n\n\n\n\n\nlibrary(sf)\n\nLinking to GEOS 3.11.1, GDAL 3.6.2, PROJ 9.1.1; sf_use_s2() is TRUE\n\nlibrary(leaflet)\nlibrary(leafpop)\n\npnt = st_as_sf(data.frame(x = 3.110742, y = 45.762643),coords = c(\"x\", \"y\"),crs = 4326)\n\nimg = \"http://bit.ly/1TVwRiR\"\n\nleaflet() %&gt;%\n  addProviderTiles('Esri.WorldImagery') %&gt;%\n  setView(3.110742, 45.762643, zoom = 17) %&gt;%\n  addCircleMarkers(data = pnt, group = \"pnt\",color = \"#bf111a\") %&gt;%\n  addPopupImages(img, group = \"pnt\")\n\n\n\n\n\n\nlibrary(DT)\ndatatable(mtcars)\n\n\n\n\n\n\n\nlibrary(\"wordcloud2\")\nwordcloud2(demoFreq)\n\n\n\n\n\ndatatable(demoFreq)"
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "research/index.html#the-languages-of-middle-earth",
+    "href": "research/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "research/index.html#the-history-of-the-war-of-the-ring",
+    "href": "research/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "photography/index.html",
+    "href": "photography/index.html",
+    "title": "Photography",
+    "section": "",
+    "text": "As a wizard and scholar of Middle-earth, I have been studying the magic of the natural world for centuries. Through my self-portraits, I aim to capture the essence of my own being and reflect on my own journey through time. Each photograph is a reflection of my own experiences and emotions. Through my photography, I hope to offer a glimpse into my life as a scholar and adventurer, and inspire others to reflect on their own journeys through the world.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nView the tutorial for this template (+ download link)"
+  },
+  {
+    "objectID": "people/index.html",
+    "href": "people/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "people/index.html#the-languages-of-middle-earth",
+    "href": "people/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "people/index.html#the-history-of-the-war-of-the-ring",
+    "href": "people/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved.\n\nView the tutorial for this template (+ download link)"
+  }
+]

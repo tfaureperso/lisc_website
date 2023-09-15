@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: cda92436-75c4-418b-b228-8a3a53377448
+      url: 'https://thierry1.quarto.pub/lisc'
